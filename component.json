@@ -1,8 +1,8 @@
 {
-	"name":"urlparser",
-	"description":"Url parser",
-	"version":"0.3.10",
-	"repo":"kaerus-component/urlparser",
-	"scripts":["index.js"],
-	"license": "Apache2_0"
+  "name": "urlparser",
+  "description": "Url parser",
+  "version": "0.3.10",
+  "repo": "virtru-component/urlparser",
+  "scripts": ["index.js"],
+  "license": "Apache2_0"
 }
