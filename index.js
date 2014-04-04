@@ -173,8 +173,10 @@ function urlParser(parse) {
 
                 ret.query.params = {};
                 ret.query.parts.forEach(function(part){
-                    param = part.split('='); 
-                    ret.query.params[param[0]] = param[1];   
+                    param = part.split('=');
+                    // The '=' character is valid in a query param value, so make sure
+                    // to add them back
+                    ret.query.params[param[0]] = param.slice(1).join('=');
                 });
             }
         }
