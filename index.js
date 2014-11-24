@@ -166,9 +166,16 @@ function urlParser(parse) {
          * @attribute query
          * @type {Object} 
          */
-        if(u[10]) {
+        
+        // Updated Code for Query Param Parsing
+        var queryParams;
+        if(u['input']) {
+            queryParams = u['input'].split('?')[1];
+        }
+
+        if(queryParams) {
             ret.query = {};
-            ret.query.parts = u[10].split('&');
+            ret.query.parts = queryParams.split('&');
             if(ret.query.parts.length) {
 
                 ret.query.params = {};

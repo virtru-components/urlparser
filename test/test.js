@@ -196,6 +196,17 @@ describe('Url', function(){
             should.equal(parsed.toString(),'http://test.com?what=hello&x=132');
         })
 
+        it('http://test.com/stuff/?what=hello&x=132', function(){
+            var parsed = url.parse('http://test.com/stuff/?what=hello&x=132');
+            parsed.should.eql( {
+              host: {protocol:"http",hostname:"test.com"},
+              path:{base:"stuff/"},
+              query:{parts:["what=hello","x=132"],params:{"what":"hello","x":"132"}}
+            });
+
+            should.equal(parsed.toString(),'http://test.com/stuff/?what=hello&x=132');
+        })
+
         it('http://user:pass@test.com', function(){
            	var parsed = url.parse('http://user:pass@test.com');
            	parsed.should.eql( {
